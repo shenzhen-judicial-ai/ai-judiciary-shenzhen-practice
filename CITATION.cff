@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use or cite this white paper, please cite it as below."
+type: report
+title: "AI in the Judiciary: The Shenzhen Practice (人工智能司法应用的深圳实践)"
+authors:
+  - name: "Shenzhen Municipality (深圳市)"
+date-released: 2026-09-16
+version: "2026.09"
+doi: 10.5281/zenodo.22975213
+license: CC-BY-NC-4.0
+languages:
+  - zh
+  - en
+keywords:
+  - judicial AI
+  - AI agents
+  - courts
+  - Shenzhen
+  - 人工智能司法应用
+  - 司法智能体
+abstract: "White paper on the Shenzhen courts' AI-assisted adjudication system, issued by Shenzhen Municipality in September 2026. Chinese and English editions."

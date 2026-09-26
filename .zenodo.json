@@ -1,0 +1,15 @@
+{
+  "title": "AI in the Judiciary: The Shenzhen Practice (人工智能司法应用的深圳实践)",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "publication_date": "2026-09-16",
+  "creators": [
+    {"name": "Shenzhen Municipality (深圳市)"}
+  ],
+  "description": "White paper on the Shenzhen courts' AI-assisted adjudication system, issued by Shenzhen Municipality in September 2026. Chinese (92 pp.) and English (84 pp.) editions.",
+  "keywords": ["judicial AI", "AI agents", "courts", "Shenzhen", "人工智能司法应用", "司法智能体"],
+  "language": "zho",
+  "version": "2026.09",
+  "license": "CC-BY-NC-4.0",
+  "access_right": "open"
+}

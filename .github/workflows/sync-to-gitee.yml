@@ -1,0 +1,33 @@
+name: Sync to Gitee
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["*"]
+  workflow_dispatch:
+
+concurrency:
+  group: sync-to-gitee
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push to Gitee
+        env:
+          GITEE_SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$GITEE_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo 'gitee.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEKxHSJ7084RmkJ4YdEi5tngynE8aZe2uEoVVsB/OvYN' >> ~/.ssh/known_hosts
+          git remote add gitee git@gitee.com:shenzhen-judicial-ai/ai-judiciary-shenzhen-practice.git
+          for i in 1 2 3; do
+            git push --force gitee 'refs/remotes/origin/*:refs/heads/*' && git push --force gitee --tags && exit 0
+            echo "push attempt $i failed, retrying in 30s"; sleep 30
+          done
+          exit 1
